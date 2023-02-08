@@ -16,3 +16,22 @@ body{
   background-color: var(--primary-color);
 }
 
+#carouselExampleDark{
+  height: 350px;
+
+  @media screen and (max-width: 480px){
+    height: 100px;
+    width: 220px;
+  }
+}
+
+#carouselExampleDark img {
+  width: 550px;
+  height: 350px;
+  @media screen and (max-width: 480px){
+    height: 100px;
+    width: 220px;
+    
+  }
+}
+

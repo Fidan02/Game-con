@@ -10,9 +10,11 @@
     "react": "^18.2.0",
     "react-carousel-npm": "^2.1.4",
     "react-dom": "^18.2.0",
+    "react-elastic-carousel": "^0.11.5",
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

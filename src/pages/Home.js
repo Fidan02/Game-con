@@ -3,11 +3,13 @@ import GameCards from '../components/GameCards'
 import axios from "axios";
 import StoreCard from '../components/StoreCard';
 import Footer from '../components/Footer';
+import loadinggif from '../Images/loadinggif.gif'
 
 function Home() {
 
     const [games, setGames] = useState([])
     const [stores, setStores] = useState([])
+    const [loading, setLoading] = useState(true)
     const url = 'https://api.rawg.io/api/games';
     const storeURL = 'https://api.rawg.io/api/stores'
     const key = '200e7e8eb251446fb66e99b3e37bc948'
@@ -28,6 +30,7 @@ function Home() {
         .then((response) => {
             const allStores = response.data.results
             setStores(allStores)
+            setLoading(false)
         }).catch(error => console.log('Error' + error))
     },[])
 
@@ -40,7 +43,9 @@ function Home() {
             {
                 games && games.slice(0,4).map((game) => <div className='col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3' key={game.id}><GameCards game={game}/></div>)
             }
-            
+            {
+                loading && <img src={loadinggif} style={{width: '300px', marginLeft: '35%'}}  alt='loading...'/>
+            }
             </div>
         </div>
         <div className='container my-5'>
@@ -50,7 +55,9 @@ function Home() {
                 {
                     stores && stores.slice(0,8).map((store) => <div className='col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3' key={store.id}><StoreCard store={store}/></div>)
                 }
-            
+                {
+                loading && <img src={loadinggif} style={{width: '300px', marginLeft: '35%'}}  alt='loading...'/>
+                }
             </div>
         </div>
         <div className='container my-5'>

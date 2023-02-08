@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Game from './pages/Game';
 import Games from './pages/Games';
 import Home from './pages/Home';
+import Store from './pages/Store';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/games' element={<Games/>}/>
         <Route path='/games/:id' element={<Game />}/>
+        <Route path='/stores/:id' element={<Store />}/>
         {/* <Route path="*" element={<Error404 />}/> */}
       </Routes>
       </BrowserRouter>
