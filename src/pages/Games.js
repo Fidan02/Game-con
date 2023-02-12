@@ -2,21 +2,17 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import GameCards from '../components/GameCards';
-import loadinggif from '../Images/loadinggif.gif'
+import loadinggif from '../Images/loadinggif.gif';
+import { useLocation } from 'react-router-dom';
 
 function Games() {
     const [games, setGames] = useState([])
     const [loading, setLoading] = useState(true)
     const [currentPage, setCurrentPage] = useState(1);
-
     const url = 'https://api.rawg.io/api/games';
     const key = '200e7e8eb251446fb66e99b3e37bc948';
-    const newPage = () => {
-        setCurrentPage(currentPage + 1)
-    }
 
     useEffect(() => {
-
         axios.get(`${url}?key=${key}&page=${currentPage}`)
         .then((response) => {
             if(response.status === 200){
@@ -27,7 +23,13 @@ function Games() {
         }).catch(error => console.log('Error' + error))
     }, [])
 
-  return (
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1)
+        console.log(currentPage)
+    }
+
+
+    return (
     <>
         <div className='container my-4'>
             <div className='row'>
@@ -44,13 +46,13 @@ function Games() {
                     <GameCards game={game}/></div>)
             }
             <div className='container-fluid'>
-                <button className='btn btn-danger'>Prev</button>
-                <button className='btn btn-danger' onClick={newPage}>Next</button>
+                <button className='btn btn-danger' >Prev</button>
+                <button className='btn btn-danger' onClick={() => nextPage()}>Next</button>
             </div>
             </div>
         </div>
     </>
-  )
+    )
 }
 
 export default Games

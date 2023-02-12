@@ -22,6 +22,7 @@ function Home() {
         .then((response) => {
             const allGames = response.data.results
             setGames(allGames)
+            setLoading(false)
         }).catch(error => console.log('Error' + error))
     }, [])
 
@@ -53,7 +54,7 @@ function Home() {
             <h1 className='text-light'>Game Stores</h1>
             <hr className='text-light border border-3 rounded'/>
                 {
-                    stores && stores.slice(0,8).map((store) => <div className='col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3' key={store.id}><StoreCard store={store}/></div>)
+                    stores && stores.slice(0,3).map((store) => <div className='col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3' key={store.id}><StoreCard store={store}/></div>)
                 }
                 {
                 loading && <img src={loadinggif} style={{width: '300px', marginLeft: '35%'}}  alt='loading...'/>

@@ -14,7 +14,6 @@ function Store() {
         .then(res => {
             const datas = res.data
             setStore(datas)
-            console.log(datas)
         }).catch(error => console.log(error))
     }, [])
   
@@ -25,10 +24,10 @@ function Store() {
         {store && <div className='container-fluid' style={{padding: '0'}} >
             <img src={store.image_background} style={{height: '300px', width: '100%', objectFit: 'cover'}} />
             <div className='container rounded-bottom d-flex justify-content-between' style={{backgroundColor: '#2C5364'}}>
-                <h1 className='fw-bold text-danger' style={{marginTop: '-27px'}}>{store.name}</h1>
-                <p className='fw-bold text-light mt-2'>Games: <span className='text-danger'>{store.games_count}</span></p>
+                <h1 className='fw-bold text-danger mt-2 ps-3'>{store.name}</h1>
+                <p className='fw-bold text-light mt-2 ps-3 pt-2'>Games: <span className='text-danger'>{store.games_count}</span></p>
             </div>
-            <div className='container mt-5' style={{padding: '0px'}}>
+            <div className='container mt-5 p-2'>
                 <h3 className='text-light'>Description <span className='btn btn-danger'><a className='text-light text-decoration-none' href={`https://${store.domain}/`} target='_blank'>Website</a></span></h3>
                 <hr className='border border-danger border-3 rounded '/>
                 <p className='text-light'>{store.description}</p>

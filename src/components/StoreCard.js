@@ -11,8 +11,7 @@ function StoreCard({store}) {
         noImage} 
         className="card-img"  style={{objectFit: 'cover'}}/>
             <div className="card-img-overlay d-flex flex-column justify-content-end" style={{backgroundColor: '#8c8c8c55'}}>
-                <h5 className="card-title fw-bold text-light border-bottom border-dark">{store.name}</h5>
-                <p className="card-text fw-bold text-dark">Games: {store.games_count}</p>
+                <h5 className="card-title fw-bold text-light">{store.name}</h5>
                 <Link className="btn btn-success w-50" to={`/stores/${store.id}`}>More Info</Link>
             </div>
         </div>
