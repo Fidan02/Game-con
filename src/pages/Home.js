@@ -39,7 +39,7 @@ function Home() {
     <>
         <div className='container my-4'>
             <div className='row'>
-            <h1 className='text-light'>Popular Games</h1>
+            <h1 className='text-light'>Interesting Games</h1>
             <hr className='text-light border border-3 rounded'/>
             {
                 games && games.slice(0,4).map((game) => <div className='col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-3' key={game.id}><GameCards game={game}/></div>)
@@ -57,7 +57,7 @@ function Home() {
                     stores && stores.slice(0,3).map((store) => <div className='col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3' key={store.id}><StoreCard store={store}/></div>)
                 }
                 {
-                loading && <img src={loadinggif} style={{width: '300px', marginLeft: '35%'}}  alt='loading...'/>
+                    loading && <img src={loadinggif} style={{width: '300px', marginLeft: '35%'}}  alt='loading...'/>
                 }
             </div>
         </div>

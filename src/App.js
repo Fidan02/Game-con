@@ -6,6 +6,7 @@ import Games from './pages/Games';
 import Home from './pages/Home';
 import Store from './pages/Store';
 import Stores from './pages/Stores';
+import Error404 from './pages/Error404';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path='/games/:id' element={<Game />}/>
         <Route path='/stores' element={<Stores/>}/>
         <Route path='/stores/:id' element={<Store />}/>
-        {/* <Route path="*" element={<Error404 />}/> */}
+        <Route path="*" element={<Error404 />}/>
       </Routes>
       </BrowserRouter>
     </>

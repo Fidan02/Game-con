@@ -21,11 +21,15 @@ function Games() {
                 setLoading(false)
             }
         }).catch(error => console.log('Error' + error))
-    }, [])
+    }, [currentPage])
 
     const nextPage = () => {
         setCurrentPage(currentPage + 1)
-        console.log(currentPage)
+    }
+    const prevPage = () => {
+        if(currentPage > 1){
+            setCurrentPage(currentPage - 1)
+        }
     }
 
 
@@ -46,8 +50,8 @@ function Games() {
                     <GameCards game={game}/></div>)
             }
             <div className='container-fluid'>
-                <button className='btn btn-danger' >Prev</button>
-                <button className='btn btn-danger' onClick={() => nextPage()}>Next</button>
+                <button className='btn btn-danger' onClick={prevPage}>Prev</button>
+                <button className='btn btn-danger' onClick={nextPage}>Next</button>
             </div>
             </div>
         </div>

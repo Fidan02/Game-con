@@ -7,8 +7,7 @@ function GameCards({game}) {
     return (
         <div className="card overlay" >
             <img src={(game.background_image !== null) ? 
-            game.background_image : 
-            noImage} 
+            game.background_image : noImage } 
             className="card-img"  style={{height: "20rem", objectFit: 'cover'}}/>
                 <div className="card-img-overlay d-flex flex-column justify-content-end" style={{backgroundColor: '#8c8c8c55'}}>
                     <h5 className="card-title text-warning">{game.name}</h5>
